@@ -11,6 +11,9 @@
 # Student side autograding was added by Brad Miller, Nick Hay, and
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
 
+# Maddie Gordon and Jennifer Nguyen
+# CSCI151, Project 6
+# 2015 November 25
 
 # Perceptron implementation
 import util
@@ -54,8 +57,17 @@ class PerceptronClassifier:
         for iteration in range(self.max_iterations):
             print "Starting iteration ", iteration, "..."
             for i in range(len(trainingData)):
-                "*** YOUR CODE HERE ***"
-                util.raiseNotDefined()
+                # "*** YOUR CODE HERE ***"
+                # util.raiseNotDefined()
+
+                y = trainingLabel[i]
+
+                f = trainingData[i]
+                # yPrime USE CLASSIFY -- HOW
+
+                if yPrime != y:
+                    self.weights[y] += f 
+                    self.weights[yPrime] -= f
 
     def classify(self, data ):
         """
@@ -79,7 +91,10 @@ class PerceptronClassifier:
         """
         featuresWeights = []
 
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        # "*** YOUR CODE HERE ***"
+        # util.raiseNotDefined()
+
+        sortedFeaturesWeights = self.weights[label].sortedKeys()
+        featuresWeights = sortedFeaturesWeights[:100]
 
         return featuresWeights
